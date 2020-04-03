@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Cocktails</h1>
+
+  <button type="button" class="btn btn-success m-5"><%= link_to 'New cocktail', new_cocktail_path %></button>
+
+  <div class="cards">
+
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %> |   <%= link_to 'destroy', cocktail_path(cocktail), method: :delete  %>
+      </div>
+    <% end %>
+
+
+
+
+  </div>
+</div>
