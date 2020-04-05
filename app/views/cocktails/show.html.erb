@@ -1,12 +1,48 @@
-<div class="container">
-  <h1><%= @cocktail.name %></h1>
-  <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail) %>
-  <%= link_to 'All Cocktails', cocktails_path %>
-  <%= link_to 'destroy', cocktail_path(@cocktail), method: :delete  %>
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %> <%= dose.ingredient.name %> <%= link_to 'destroy', dose_path(dose), method: :delete  %></li>
+<div>
+  <div class="navbar navbar-expand-sm navbar-light navbar-pomtails">
+    <%= link_to "Rhum Pom Pom Pom", root_path, class: "nav-item" %>
+    <%= link_to "Add a new cocktail", new_cocktail_path, class: "nav-item" %>
+  </div>
+</div>
 
-    <% end %>
-  </ul>
+<div class="banner banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1476837579993-f1d3948f17c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container">
+    <h1><strong><%= @cocktail.name %></strong></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <h2>Description</h2>
+      <p><%= @cocktail.description %></p>
+      <%= link_to 'destroy', cocktail_path(@cocktail), method: :delete  %>
+    </div>
+
+    <div class="col-1">
+    </div>
+    <div class="col-4">
+      <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+          <li><strong><%= dose.ingredient.name %></strong> <%= dose.description %> <%= link_to '', dose_path(dose), class: "fas fa-trash-alt", method: :delete  %></li>
+          <% end %>
+        </ul>
+      </div>
+      <h3>Add an ingredient</h3>
+
+      <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <%= link_to 'All Cocktails', root_path %>
+
 </div>

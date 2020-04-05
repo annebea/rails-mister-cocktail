@@ -1,7 +1,13 @@
+<div>
+  <div class="navbar navbar-expand-sm navbar-light navbar-pomtails">
+    <%= link_to "Rhum Pom Pom Pom", root_path, class: "nav-item" %>
+  </div>
+</div>
 <div class="container">
-  <h1>New cocktail</h1>
+  <h1 class="page-title">What's your new cocktail?</h1>
   <%= simple_form_for [ @cocktail ] do |f| %>
   <%= f.input :name %>
+  <%= f.input :description %>
   <%= f.submit %>*
   <% end %>
 </div>

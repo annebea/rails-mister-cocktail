@@ -1,12 +1,20 @@
-.navbar-lewagon {
+.navbar-pomtails {
   justify-content: space-between;
   background: white;
+  color: white;
+  padding: 25px;
+  height: 70px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+.nav-item {
+  color: $gray;
+  text-decoration: none;
+  font-family: $headers-font;
+  font-size: 25px;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+    opacity: 0.7;
+  }
 }

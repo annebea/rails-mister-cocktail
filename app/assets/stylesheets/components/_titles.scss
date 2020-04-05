@@ -1,0 +1,17 @@
+.page-title {
+  text-align: center;
+  color: $gray;
+  font-size: 50px;
+  margin-top: 30px;
+}
+
+.ingredients {
+  margin-bottom: 150px;
+  ul {
+    list-style-type: none;
+    list-style-position: outside;
+    padding-left: 0;
+    font-size: 20px;
+  }
+}
+

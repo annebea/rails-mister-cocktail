@@ -1,18 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1476837579993-f1d3948f17c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+    <div class="container">
+    <h1><strong>Rhum Pom Pom Pom</strong></h1>
+  </div>
+  <div class="container">
+    <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-flat mt-20"%>
+  </div>
+</div>
+
 <div class="container">
-  <h1>Cocktails</h1>
-
-  <button type="button" class="btn btn-success m-5"><%= link_to 'New cocktail', new_cocktail_path %></button>
-
   <div class="cards">
-
     <% @cocktails.each do |cocktail| %>
       <div class="card-category">
-        <%= link_to cocktail.name, cocktail_path(cocktail) %> |   <%= link_to 'destroy', cocktail_path(cocktail), method: :delete  %>
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
       </div>
     <% end %>
-
-
-
-
   </div>
 </div>
