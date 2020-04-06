@@ -1,5 +1,6 @@
 <div>
-  <div class="navbar navbar-expand-sm navbar-light navbar-pomtails">
+
+  <div class="navbar navbar-expand-sm navbar-light navbar-new">
     <%= link_to "Rhum Pom Pom Pom", root_path, class: "nav-item" %>
   </div>
 </div>
@@ -8,6 +9,7 @@
   <%= simple_form_for [ @cocktail ] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>*
   <% end %>
 </div>

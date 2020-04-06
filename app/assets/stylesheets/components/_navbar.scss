@@ -1,20 +1,29 @@
-.navbar-pomtails {
+.navbar-new {
   justify-content: space-between;
-  background: white;
-  color: white;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1476837579993-f1d3948f17c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
   padding: 25px;
   height: 70px;
 }
 
 .nav-item {
-  color: $gray;
+  color: white;
   text-decoration: none;
   font-family: $headers-font;
   font-size: 25px;
 
   &:hover {
-    color: $gray;
     text-decoration: none;
     opacity: 0.7;
+    color: white;
+  }
+}
+
+.navbar-show{
+  justify-content: space-between;
+  padding: 25px;
+  height: 70px;
+  background-color: white;
+  .nav-item {
+    color: $gray;
   }
 }

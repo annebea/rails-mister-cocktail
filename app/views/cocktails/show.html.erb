@@ -1,11 +1,11 @@
 <div>
-  <div class="navbar navbar-expand-sm navbar-light navbar-pomtails">
+  <div class="navbar navbar-expand-sm navbar-light navbar-show">
     <%= link_to "Rhum Pom Pom Pom", root_path, class: "nav-item" %>
     <%= link_to "Add a new cocktail", new_cocktail_path, class: "nav-item" %>
   </div>
 </div>
 
-<div class="banner banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1476837579993-f1d3948f17c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @cocktail.photo.key, crop: :fill %>)">
   <div class="container">
     <h1><strong><%= @cocktail.name %></strong></h1>
   </div>
@@ -16,7 +16,10 @@
     <div class="col-7">
       <h2>Description</h2>
       <p><%= @cocktail.description %></p>
-      <%= link_to 'destroy', cocktail_path(@cocktail), method: :delete  %>
+
+
+      <%#= link_to 'destroy', cocktail_path(@cocktail), method: :delete  %>
+      <%= link_to '', cocktail_path(@cocktail), class: "fas fa-trash-alt", method: :delete  %>
     </div>
 
     <div class="col-1">
@@ -43,6 +46,5 @@
 
 <div class="container">
 
-  <%= link_to 'All Cocktails', root_path %>
-
+  <%#= link_to 'All Cocktails', root_path %>
 </div>
